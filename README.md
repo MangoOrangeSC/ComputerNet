@@ -312,6 +312,12 @@ MAC地址，随着网卡
 
 #### 网桥、交换机
 
+二层交换机工作于[OSI模型](https://baike.baidu.com/item/OSI模型/10119902)的第2层（数据链路层），故而称为二层交换机。二层交换技术的发展已经比较成熟，二层[交换机](https://baike.baidu.com/item/交换机)属[数据链路层](https://baike.baidu.com/item/数据链路层/4329290)设备，可以识别数据帧中的MAC地址信息，根据MAC地址进行转发，并将这些MAC地址与对应的端口记录在自己内部的一个地址表中。
+
+二层交换机与网桥的区别就是,网桥所有端口共享一个冲突域,所有端口共享带宽!而交换机每个端口都是独立的冲突域,每个端口都有自己的独立带宽,100m的交换机,每个端口的传输速率就是100m.
+
+
+
 ![image1](pic/pic89.png)
 
 冲突域：同一区域同一时刻只能一个设备通信
@@ -434,7 +440,15 @@ MAC地址，随着网卡
 
 ### 4.8 网络层设备
 
+三层交换机
 
+三层交换机就是具有部分路由器功能的交换机，工作在OSI网络标准模型的第三层：网络层。三层交换机的最重要目的是加快大型局域网内部的数据交换，所具有的路由功能也是为这目的服务的，能够做到一次路由，多次转发。
+
+![image1](pic/pic158.png)
+![image1](pic/pic159.png)
+![image1](pic/pic160.png)
+![image1](pic/pic161.png)
+![image1](pic/pic162.png)
 
 ## 第五章 传输层
 
@@ -451,11 +465,21 @@ MAC地址，随着网卡
 
 微信聊天一般都是UDP
 
+
+
+#### 端口
+
 ![image1](pic/pic128.png)
 
 端口：唯一标识主机中的进程，逻辑端口、软件端口
 
-端口号：动态选择
+
+
+- 数据链路和IP中的地址，分别指的是MAC地址和IP地址。前者用来识别同一链路中的不同的计算机，后者用来识别TCP/IP网络中互联的主机和路由器
+- 在传输层中也有类似地址的概念，那就是端口号
+- 端口号用来识别同一台计算机中进行通信的不同应用程序，因此也被称为程序地址
+
+
 
 ![image1](pic/pic129.png)
 
@@ -463,7 +487,63 @@ MAC地址，随着网卡
 
 ### 5.2 UDP
 
+![image1](pic/pic130.png)
 
+udp是不可靠传输，通过应用层保证可靠
+
+UDP不改变应用层报文
+
+![image1](pic/pic131.png)
+
+源端口号可有可无，如果不需要反馈，可以省略
+
+![image1](pic/pic132.png)
+![image1](pic/pic133.png)
 
 ### 5.3 TCP
+
+#### 531 TCP协议特点
+
+![image1](pic/pic134.png)
+
+点对点
+
+![image1](pic/pic135.png)
+![image1](pic/pic136.png)
+![image1](pic/pic137.png)
+
+#### 5.3.2 TCP报文段格式
+
+![image1](pic/pic138.png)
+![image1](pic/pic139.png)
+![image1](pic/pic140.png)
+![image1](pic/pic141.png)
+
+#### 5.3.3 TCP连接管理
+
+![image1](pic/pic142.png)
+![image1](pic/pic143.png)
+![image1](pic/pic144.png)
+![image1](pic/pic145.png)
+![image1](pic/pic146.png)
+
+#### 534 TCP可靠传输
+
+![image1](pic/pic147.png)
+![image1](pic/pic148.png)
+![image1](pic/pic149.png)
+![image1](pic/pic150.png)
+![image1](pic/pic151.png)
+
+#### 535 TCP流量控制
+
+![image1](pic/pic152.png)
+![image1](pic/pic153.png)
+
+#### 536 TCP拥塞控制
+
+![image1](pic/pic154.png)
+![image1](pic/pic155.png)
+![image1](pic/pic156.png)
+![image1](pic/pic157.png)
 
